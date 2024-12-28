@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { friend } from "./types";
 
 interface ContactProps {
@@ -6,9 +6,14 @@ interface ContactProps {
 }
 
 function Contact({ details }: ContactProps) {
+  const navigate = useNavigate();
+
+  const openConvo = () => {
+    navigate("/conversation");
+  };
+
   return (
-    // <Link to="chibai">
-    <div className="contact">
+    <div className="contact" onClick={openConvo}>
       <img
         src={details?.profile_pic}
         alt=""
@@ -17,15 +22,14 @@ function Contact({ details }: ContactProps) {
       <div className="contactDetailsContainer">
         <h2 className="contactName">{details?.username}</h2>
         <div className="contactStatus">
-          <div></div>
+          <div className="statusIcon"></div>
           <span>{details?.status}</span>
         </div>
       </div>
-      <div className="notification">
+      <div className="bigDot">
         <span></span>
       </div>
     </div>
-    // </Link>
   );
 }
 

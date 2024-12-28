@@ -105,6 +105,7 @@ i {
   gap: 5px;
 }
 
+/* Contact Styles */
 .contact {
   box-sizing: border-box;
   border: 5px solid #4D4844;
@@ -113,55 +114,6 @@ i {
   grid-template: 1fr / 1fr 2fr 1fr; 
   gap: 10px;
   cursor: pointer;
-
-  .contactProfilePicture {
-    --len: 70px;
-    
-    grid-area: 1 / 1 / 2 / 2;
-    height: var(--len);
-    width: var(--len);
-    align-self: center;
-    border-radius: var(--len);
-  }
-  
-  .contactDetailsContainer {
-    grid-area: 1 / 2 / 2 / 3;
-  }
-  
-  .contactName {
-    font-size: 24px;
-    margin: 0px;
-  }
-  
-  .contactStatus {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  
-    div {
-      --radius: 15px;
-      height: var(--radius);
-      width: var(--radius);
-      border-radius: var(--radius);
-      background-color: #737373;
-    }
-  
-    span {
-      font-size: 15px;
-    }
-  }
-  
-  .notification {
-    --len: 25px;
-  
-    grid-area: 1 / 3 / 2 / 4;
-    align-self: center;
-    justify-self: center;
-    height: var(--len);
-    width: var(--len);
-    border-radius: var(--len);
-    background-color: #5DDA6F;
-  }
 }
 
 .contact:hover {
@@ -174,6 +126,56 @@ i {
   }
 }
 
+.contactProfilePicture {
+  --len: 70px;
+  
+  grid-area: 1 / 1 / 2 / 2;
+  height: var(--len);
+  width: var(--len);
+  align-self: center;
+  border-radius: var(--len);
+}
+
+.contactDetailsContainer {
+  grid-area: 1 / 2 / 2 / 3;
+}
+
+.contactName {
+  font-size: 24px;
+  margin: 0px;
+}
+
+.contactStatus {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  span {
+    font-size: 15px;
+  }
+}
+
+.statusIcon {
+  --radius: 15px;
+  height: var(--radius);
+  width: var(--radius);
+  border-radius: var(--radius);
+  background-color: #737373;
+}
+
+.bigDot {
+  --len: 25px;
+
+  grid-area: 1 / 3 / 2 / 4;
+  align-self: center;
+  justify-self: center;
+  height: var(--len);
+  width: var(--len);
+  border-radius: var(--len);
+  background-color: #5DDA6F;
+}
+
+/* Options Container */
 .optionsContainer {
   grid-area: 2 / 1 / 3 / 2;
   position: relative;
@@ -207,14 +209,17 @@ i {
   padding: 5px;
 }
 
-.optionBtn:hover {
+.hoverBtnStyle:hover {
   background-color: #4D4844;
+  color: #FFFDF9;
+  cursor: pointer;
 
-  i {
+  * {
     color: #FFFDF9;
   }
 }
 
+/* Messages Section */
 .messagesSection {
   grid-area: 1 / 2 / 2 / 3;
   position: relative;
@@ -257,24 +262,30 @@ i {
   }
 }
 
-.otherUserProfile {
+/* Styling for other user profile */
+dialog {
   color: black;
-  width: 400px;
+  min-width: 450px;
   box-sizing: border-box;
   border: 2px solid #4D4844;
   background-color: #E5E1DB;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 0%;
   border-radius: 20px;
   z-index: 2;
-  padding: 10px;
+  padding: 0px;  
+}
+
+.otherUserProfileContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px 10px 15px 10px;
 }
 
 .profileHeader {
-  padding-top: 30px;
-  padding-left: 15px;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .profileHeaderBG {
@@ -282,4 +293,121 @@ i {
   border-radius: 20px;
   background-color: #FFFDF9;
   height: 80px;
+  width: 100%;
+  z-index: 0;
+}
+
+.profileHeaderContainer {
+  z-index: 1;
+  display: flex;
+  align-items: end;
+  padding-top: 30px;
+  padding-left: 15px;
+}
+
+.profileImg {
+  --len: 100px;
+
+  height: var(--len);
+  width: var(--len);
+  border-radius: var(--len);
+  border: 5px solid #E5E1DB;
+}
+
+.profileStatus, .profileJoinDate {
+  background-color: #FFFDF9;
+  color: black;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+.profileStatus {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.profileJoinDate {
+  margin-left: 5px;
+}
+
+.profileDetailsContainer {
+  padding: 0px 15px;
+}
+
+.profileDetailsForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.formInput {
+  background-color: #FFFDF9;
+  border-radius: 20px;
+  color: black;
+  font-family: aleo;
+  border: 0px;
+}
+
+.profileDetailsForm input {
+  padding: 5px 15px;
+}
+
+.profileDetailsForm textarea {
+  padding: 10px 15px;
+  min-height: 100px;
+  resize: none;
+}
+
+.profileUsername, .profileDescription {
+  font-family: aleo;
+  margin: 0px;
+}
+
+.bigText {
+  font-size: 32px;
+} 
+
+.normalText {
+  font-size: 16px;
+}
+
+.profileBtnContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  gap: 10px;
+}
+
+.profileBtn {
+  font-size: 24px;
+  border: 2px solid #4D4844;
+  color: black;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-family: aleo;
+  background-color: #FFFDF9;
+  cursor: pointer;
+}
+
+.saveProfileBtn:hover {
+  background-color: #D09BFF;
+  color: white;
+}
+
+.addFriendContainer {
+  padding: 10px;
+
+  form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: black;
+
+    input {
+      flex: 1;
+      padding: 5px 10px;
+    }
+  }
 }
