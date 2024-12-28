@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import users from "./data/users";
-import { friend } from "./types";
+import { user } from "./types";
 import Contact from "./Contact";
+import userGroups from "./data/usergroups";
 
 function ContactList() {
-  const [friends, setFriends] = useState<friend[]>([]);
-
+  const [friends, setFriends] = useState<user[]>([]);
+  console.log(userGroups);
   useEffect(() => {
     setFriends(users);
   }, []);

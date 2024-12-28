@@ -11,9 +11,10 @@ interface user {
 
 interface group {
   id: number;
-  name: string;
-  profile_pic: string;
-  description: string;
+  name?: string;
+  profile_pic?: string;
+  description?: string;
+  isDM: boolean;
 }
 
 interface userGroup {
@@ -26,7 +27,7 @@ interface message {
   id: number;
   recipient: number;
   sender: number;
-  message: string;
+  content: string;
   attachment: number[];
   sent: boolean;
   read: boolean;

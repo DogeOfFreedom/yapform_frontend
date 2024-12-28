@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom";
-import { friend } from "./types";
+import { user } from "./types";
 
 interface ContactProps {
-  details: friend;
+  details: user;
 }
 
 function Contact({ details }: ContactProps) {
